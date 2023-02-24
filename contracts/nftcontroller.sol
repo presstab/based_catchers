@@ -1,4 +1,5 @@
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./ierc5058.sol";
 
 /**
  * @dev Required interface of an ERC721 compliant contract.
@@ -128,15 +129,26 @@ contract NftTracker is Ownable {
     //The base nft
     IERC721 public baseNft;
 
-    uint16 public maxAttachments;
+    uint16 public maxTeamSize;
 
     //list of nft's that can be attached to the base nft
     address[] public attachableNft;
 
     struct NftInstance {
-        address addr;
-        uint256 id;
+        address addr; // the address of the nft contract
+        uint256 id; // the id of the nft being used
     }
+
+    struct Team {
+        NftInstance[] members;
+        string name;
+        //todo name. Most gas efficient string type?
+    }
+
+    //track teams by user
+    mapping(address => Team[]) public mapUserTeams; // user address => teams
+
+    //todo track id => team
 
     //Track nft attachments to the base Nft
     mapping(uint256 => NftInstance[]) public mapAttachments;
@@ -149,12 +161,56 @@ contract NftTracker is Ownable {
         return mapAttachments[_baseId];
     }
 
+    /**
+     * @notice Initializes this Swap contract with the given parameters.
+     * This will also deploy the LPToken that represents users
+     * LP position. The owner of LPToken will be this contract - which means
+     * only this contract is allowed to mint new tokens.
+     *
+     * @param _team an array of NFT Instances that will form a team.
+       The team must include one and only one baseNFT.
+     */
+    function createTeam(NftInstance[] calldata _team) public {
+        require(_team.length <= maxTeamSize, "err: team is too large");
+
+        bool hasBaseNft = false;
+        uint256 len = _team.length;
+        for (uint256 i = 0; i < len; i++){
+            NftInstance nft = _team[i];
+
+            //First team member must be the base
+            if (i == 0){
+                require(nft.addr == address(baseNft), "err: first team member must be base");
+            }
+            
+            //NFT must be unlocked
+            require(!IERC5058(nft.addr).isLocked(), "err: nft is locked");
+            
+            //The owner must be the msg sender
+            require(IERC721(nft.addr).ownerOf(nft.id) == msg.sender, "err: msg.sender does not own nft");
+
+            //Check if this is an approved nft
+            if (i > 0){
+                uint256 n = getSubNft(nft.addr);
+                require(n < attachableNft.length, "err: nft not valid for teams");
+            }
+        }
+
+        //Lock each nft for an indefinite time
+        for (uint256 i = 0; i < len; i++){
+            IERC5058(_team[i].addr).lock(_team[i].id, 99999999999999);
+        }
+
+        Team team = Team(_team, "name");
+        mapUserTeams[msg.sender].push(team);
+    }
+
     //Get the subnft slot within attachableNft array
-    function getSubNft(IERC721 _subNft) internal view returns (uint256) {
+    function getSubNft(address _subNft) internal view returns (uint256) {
         //Identify which subNft is being used
         uint256 n = ~uint256(0);
         for (uint256 i = 0 ; i < attachableNft.length; i++) {
-            if (address(_subNft) == attachableNft[i]) {
+            if (_subNft == attachableNft[i]) {
                 n = i;
                 break;
             }
@@ -162,22 +218,22 @@ contract NftTracker is Ownable {
         return n;
     }
 
-    //attach a subNft to the baseNft
-    function attach(uint256 _tokenIdBase, uint256 _tokenIdSub, IERC721 _subNft) public {
-        uint256 n = getSubNft(_subNft);
-        require(n < attachableNft.length, "invalid subNFT");
-        require(msg.sender == baseNft.ownerOf(_tokenIdBase), "not owner of nft base id");
-        require(msg.sender == _subNft.ownerOf(_tokenIdSub), "not owner of subnft id");
+    // //attach a subNft to the baseNft
+    // function attach(uint256 _tokenIdBase, uint256 _tokenIdSub, IERC721 _subNft) public {
+    //     uint256 n = getSubNft(_subNft);
+    //     require(n < attachableNft.length, "invalid subNFT");
+    //     require(msg.sender == baseNft.ownerOf(_tokenIdBase), "not owner of nft base id");
+    //     require(msg.sender == _subNft.ownerOf(_tokenIdSub), "not owner of subnft id");
 
-        //todo: Check that the subnft is not already attached
-        // maybe need a tracked list of what nft's are actively attached?
+    //     //todo: Check that the subnft is not already attached
+    //     // maybe need a tracked list of what nft's are actively attached?
 
-        //Check total count of attachments
-        require(mapAttachments[_tokenIdBase].length < maxAttachments);
+    //     //Check total count of attachments
+    //     require(mapAttachments[_tokenIdBase].length < maxAttachments);
 
-        //Attach
-        mapAttachments[_tokenIdBase].push(NftInstance(address(_subNft), _tokenIdSub));
-    }
+    //     //Attach
+    //     mapAttachments[_tokenIdBase].push(NftInstance(address(_subNft), _tokenIdSub));
+    // }
 
     //Find the index of the subnft that is attached
     function getSubIndex(uint256 _tokenIdBase, address _subNft, uint256 _tokenIdSub) internal view returns (uint256) {
