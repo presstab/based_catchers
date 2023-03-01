@@ -3,24 +3,81 @@ The Story of the Based Catchers
 
 Part 1
 
-Several million years into the future, an advanced space society, known as the Based Catchers, have been exploring the depths of their own galaxy. A new technology developed by this advanced civilization allows them to look millions of light years away, in great detail.
+Several million years into the future, an advanced space society, known as the BASEDcatchers, have been exploring the depths of their own galaxy. A new technology developed by this advanced civilization allows them to look millions of light years away, in great detail.
 
-Skanda, the leader of the Based Catchers, was known to have brought peace to their planet through his great exploration of their galaxy, continuing on the tradition of "catching" the resources needed throughout the Galaxy to continue the growth of their own civilization. When it was time to use this new telescope they had developed, Skanda was asked to lead the charge. When Skanda looked through the lens he could not believe his eyes. A planet, at the edge of their galaxy, was showing unusual signs of activity, signifying that this planet contains substances that Based Catchers thought to be be extremely rare -- specifically Sona. Sona could be used to create more powerful technologies, weapons, armor. It is beyond functional and valuable to the Based Catchers. Due to the rarity, only Warriors of the Based Catchers would wear a necklaces made of Sona underneath their armor. As Skanda spent more time calculating what exactly was going on on this planet, he noticed there were also unusual signs of life. This information brought unease to the Based Catchers. What would they do if there was a rival space society with technologies even more advanced than theirs? 
+SCENE
 
-It was decided, Based Catchers were not known to be passive. They would not sit idly with the idea that their own existence could be at risk if they did not continue the exploration of this mysterious planet, especially if it contained valuable amounts of Sona. The ships were prepared, and Skanda gathered 10,000 of the great warriors of the Based Catcher civilization to begin what would only become a new era for the Based Catchers.
+"Hi! I'm Skanda, the leader of the BASEDcatchers, we are so glad to have you training with our fleet! We have created the BASEDscope, it took so many years for us to develop, but we it is finally ready to look through, you want to try?" - Skanda
 
-The mission would last at least 2 years. Preparations would need to be made to ensure a successful exploration, and the 10,000 individuals who would be joining needed to be fully committed to the idea that they may never return to their home planet.
+ -- User character is able to walk up to telescope and look through, as it looks through, a scene is played showing through the galaxy...the user can select different items:
+ 
+ BASEDfuel: user clicks on this and reads a description of what BASEDfuel is:
+  "BASEDfuel is required for BASEDcatchers to complete any trading within their universe. They claim raw fuel from space debris and convert it to BASEDfuel, giving it a stable value that allows BASEDcatchers to gain certain items that they find valuable. This fuel can also be used to power varios vessels and ships."
+ 
+ Various floating metal: user clicks on this and reads a description of what BASEDmetal is:
+  "BASEDmetal is an alloy made of a combination of various space metals, only the BASEDcatchers know how to work with this material to make various armor, space vessels and ships, and day to day building including shelter"
+  
+Once user has clicked through these two items, a shining bright planet will appear...
+
+"Ahh, yes, you are seeing the planet that has me so interested, and one of the reasons I recruited you to start training with me...you see how it is spinning? Do you know what that means?" -Skanda
+
+"It means that planet is full of Sona! Sona, as you know, is the most valuable material to us BASEDcatchers. It contains ancient properties that we still do not fully understand, but that our ancestors used to conquer this galaxy. That necklace you will earn once you complete your training? It is made of Sona. We need to go to this planet to figure out what is going on. Now, take another look, and tell me if you see the faint glow?"
+
+User is shown the planet again, this time with a bluish glow
+
+"That means there are also signs of life on this planet. I don't know if that is a good or bad thing. We are a fearless species, but an advanced life form with unlimited Sona? That could be dangerous. A more primitive life form however? Well that might not be an issue. Now, run along, it's time we start our training. In order to earn your necklace, you will have to also train 5 of your BASEDfriends/pals/buddies (this needs to be clear it is some sort of pet) to help us in our explopration. We will set sail for Planet Sona in 2 months time. You and 10,000 other BASEDcatchers will be joining our first fleet. The other 10,000 who are training with you will join us in due time as we deem necessary."
+  
+
 
 Part 2
 
-The initial launch was successful. Skanda and the 10,000 warriors were deep in their galaxy traveling towards the mysterious planet. Tensions began to surface the closer the warriors approached, as they truly did not know what they would be encountering. Would this be a battle? Would they find a peaceful community? Would this planet provide the resources they would need to further advance their great society? They would soon find out.
+SCENE: User is on spaceship, in the captains office with Skanda
 
-As the Based Catchers got closer to the mystery planet, they noted that the necklaces under their armor would start vibrating at a high frequency. Brave as they were, this caused some level of panic within the ranks, however this was quickly squashed down by Skanda, as it was his belief that this was a positive sign, confirming the existence of Sona on the mystery planet.
+"I'm so proud of you and our fleet. It was really hard to select the first 10,000 warriors, but the rest will be joining us to help with our exploration as we call upon their services. I think having one friend for each of us will be helpful, and you know how they breed, we will have plenty to help us along this journey. Now, check out some of these special items we have to help along our journey, hoping we don't need to use them all of them, but they might be helpful!"
 
-Finally they were within 2 weeks of the completion of their journey. As they came closer and closer to the planet, they knew they were about to encounter something quite unusual. The plan was to land in a dark part of the planet which was not showing any signs of life or signs of Sona, this would allow them to formulate a plan after touching down on the ground.
+User is able to walk around the captians room and click on select items:
+
+BASEDgrenade: This is a mildly powerful weapon in order to disperse any rivals
+
+BASEDnuke: This is an extremely destructive weapon which will cause mass casualties and damage
+
+BASEDshields: These are defense shields which protect BASEDcatchers and BASEDfriends 
+
+BASEDpotion: A magical potion which allows BASEDcatchers and BASEDfriends to think more creatively
+
+BASEDbooks: Lore from the history of the BASEDcatchers which allows individuals to gain more knowledge in various battle mechanisms
+
+BASEDffeiene: A drink which makes BASEDcatchers and BASEDfriends much quicker
+
+Ship continues to zoom towards Planet Sona. as it approaches closer...
+
+"Wow do you feel that, our necklaces...they are vibrating. I wonder what that means?"
+
+As they get closer and closer to Planet Sona, their necklaces continue to vibrate at a more intense frequency 
+
 
 Part 3
 
-The Based Catchers landed smoothly, in a hidden corner of the planet, far from any signs of life. However, the whole point of this mission was to find out exactly what was going on on this planet, and if they could "catch" any resources that would be valuable to their society.
+In a speech to the audience of 10k BASEDcatchers:
 
-Skanda arose early the first morning on the planet, far before any of the other Based Catchers. In his full armor, he began his journey on foot. He had spent the last two years of travel mapping out this planet in detail, so he felt quite comfortable going on a solo early morning journey. 
+"We have landed fellow catchers, a long journey that we have been preparing for over the course of the past two years."
+
+Crowd cheers
+
+"Now, as you know, we have chosen to land on the uninhabited quadrant of this planet, a few of us will be exploring this morning while the majority of us stay and set up camp."
+
+Scene changes...
+
+Skanda + BASEDfren and User + BASEDfren +random BASEDcatcher and friend are walking through a mystery planet.
+
+"I feel such a strong attachment with my necklace and this land, it just feels as if we have been here before." -Skanda
+
+"Yeah, I wonder what that means?"
+
+As they continue to walk, unkowningly to both of them, a trail of Droids starts trailing them. After ~10 seconds, Skanda notices
+
+"Oi! who are you, are you covered in Sona??" 
+
+The droid gets closer and closer, Skanda and his friend are overcome with curiosity and greed. As the droid gets closer Skanda's eyes glow red. He asks the Droid to join him, and once he does, he and the droid + his friend attack the random BASEDcatcher at defeat him.
+
+Scene dissolves...voiceover is heard "And that is the story of the battle of the BASEDcatchers. Unfortunately. the Sona was too valuable for any of the Catchers to recall their training and the mission they had set for. Instead, they would set to conquer Planet Sona. Each BASEDcatcher will choose two BASEDfriends to be loyal to their team. Additionally, 5 SONAdroids are able to join a team, the stronger they are, the more powerful the team can become. Teams will battle one another to receive various rewards"
