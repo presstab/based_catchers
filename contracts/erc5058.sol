@@ -183,16 +183,16 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
     * Emits a {Locked} event.
     */
     function lock(uint256 tokenId, uint256 expired) external override {
+        // will fail if invalid tokenId
         address owner = ownerOf(tokenId);
-        require(_exists(tokenId), "tokenId does not exist");
         require(mapLocks[tokenId].locker == address(0), "Token already locked");
 
         //Check that caller is approved to lock
         if (owner != msg.sender) {
-            // Operator can by the unique lock operator for the specific tokenid
-            if (_getLockApproved(tokenId) != msg.sender) {
-                // Operator can have approval to operate all id's belonging to an owner
-                require(_isLockApprovedForAll(owner, msg.sender), "msg.sender is not approved to operate locks");
+            // Operator can have approval to operate all id's belonging to an owner
+            if (!_isLockApprovedForAll(owner, msg.sender)) {
+                // Operator can by the unique lock operator for the specific tokenid
+                require(_getLockApproved(tokenId) == msg.sender, "msg.sender is not approved to operate locks");
             }
         }
 
