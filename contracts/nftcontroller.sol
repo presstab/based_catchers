@@ -19,8 +19,20 @@ contract NftTracker is Ownable {
     struct Team {
         mapping(uint256 => NftInstance) members;
         uint256 length;
-        string name;
-        //todo name. Most gas efficient string type?
+    }
+
+    //team_id => Team
+    mapping(uint256 => Team) public mapTeams; // team_id => Team
+    //todo list of team_id
+
+    //track teams owned by a user address
+    mapping(address => uint256[]) public mapUserTeams; // user address => teamId[]
+
+    //track what team an nft is on
+    mapping(uint256 => uint256) public mapNftTeam; //nft hash (keccak(address,id)) => team_id
+
+    constructor (IERC721 _baseNft) {
+        baseNft = _baseNft;
     }
 
     // Get the unique hash of a team
@@ -35,21 +47,12 @@ contract NftTracker is Ownable {
         return hash;
     }
 
-    function getHash(NftInstance memory _nft) internal pure returns(uint256){
+    function getHash(NftInstance memory _nft) public pure returns(uint256){
         return uint256(keccak256(abi.encode(_nft.addr, _nft.id)));
     }
 
-    //team_id => Team
-    mapping(uint256 => Team) public mapTeams; // team_id => Team
-
-    //track teams owned by a user address
-    mapping(address => uint256[]) public mapUserTeams; // user address => teamId[]
-
-    //track what team an nft is on
-    mapping(uint256 => uint256) public mapNftTeam; //nft hash (sha256(address,id)) => team_id
-
-    constructor (IERC721 _baseNft) {
-        baseNft = _baseNft;
+    function getUserTeams(address _user) public view returns (uint256[] memory){
+        return mapUserTeams[_user];
     }
 
     /**
@@ -64,6 +67,10 @@ contract NftTracker is Ownable {
         require(_team.length <= maxTeamSize, "err: team is too large");
 
         uint256 len = _team.length;
+        uint256 team_id = getHash(_team);
+        Team storage team = mapTeams[team_id];
+        team.length = len;
+
         for (uint256 i = 0; i < len; i++){
             NftInstance calldata nft = _team[i];
 
@@ -71,9 +78,6 @@ contract NftTracker is Ownable {
             if (i == 0){
                 require(nft.addr == address(baseNft), "err: first team member must be base");
             }
-            
-            //NFT must be unlocked
-            require(!IERC5058(nft.addr).isLocked(nft.id), "err: nft is locked");
             
             //The owner must be the msg sender
             require(IERC721(nft.addr).ownerOf(nft.id) == msg.sender, "err: msg.sender does not own nft");
@@ -83,26 +87,65 @@ contract NftTracker is Ownable {
                 uint256 n = getSubNft(nft.addr);
                 require(n < attachableNft.length, "err: nft not valid for teams");
             }
-        }
 
-        uint256 team_id = getHash(_team);
-        Team storage team = mapTeams[team_id];
-        team.length = len;
-        team.name = "name"; //todo
-
-        for (uint256 i = 0; i < len; i++){
-            team.members[i] = _team[i];
-        }
-
-        for (uint256 i = 0; i < len; i++){
             //Lock each nft for an indefinite time
-            IERC5058(_team[i].addr).lock(_team[i].id, 99999999999999);
+            IERC5058(nft.addr).lock(nft.id, 99999999999999);
 
             //track nft's current team
-            mapNftTeam[getHash(_team[i])] = team_id;
+            mapNftTeam[getHash(nft)] = team_id;
+
+            team.members[i] = nft;
         }
 
         mapUserTeams[msg.sender].push(team_id);
+    }
+
+    /**
+     * @notice Disband a team.
+     * - All NFT's must be unlocked
+     * - This will unlock all of the team NFT's from this contract
+     *
+     * @param _id the unique id of the team.
+     */
+    function disbandTeam(uint256 _id) public {
+        Team storage team = mapTeams[_id];
+        uint256 len = team.length;
+        require(len > 0, "team does not exist");
+
+        for (uint256 i = 0; i < len; i++){
+            NftInstance memory nft = team.members[i];
+
+            if (i == 0){
+                //The owner must be the msg sender
+                require(IERC721(nft.addr).ownerOf(nft.id) == msg.sender, "err: msg.sender does not own nft");
+            }
+
+            //Unlock nft
+            IERC5058(nft.addr).unlock(nft.id);
+
+            //Remove nft tracking
+            delete mapNftTeam[getHash(nft)];
+
+            //Remove from team
+            delete team.members[i];
+        }
+
+        //Remove team from user tracking
+        uint256[] storage userTeams = mapUserTeams[msg.sender];
+        uint256 count = userTeams.length;
+        for (uint256 i = 0; i < count; i++){
+            if (userTeams[i] == _id) {
+                //Move last element to this spot
+                if (count > 1) {
+                    userTeams[i] = userTeams[count - 1];
+                }
+                userTeams.pop(); //todo test this
+                break;
+            }
+        }
+
+        //Delete team from mapping
+        delete mapTeams[_id];
     }
 
     //Get the subnft slot within attachableNft array
