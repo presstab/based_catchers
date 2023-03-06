@@ -213,7 +213,7 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
     function unlock(uint256 tokenId) external override {
         require(mapLocks[tokenId].locker != address(0), "lock does not exist");
         require(mapLocks[tokenId].locker == msg.sender, "msg.sender is not the locker");
-        mapLocks[tokenId] = Lock(address(0), 0);
+        delete mapLocks[tokenId];
         emit Unlocked(msg.sender, msg.sender, tokenId);
     }
 
