@@ -7,11 +7,11 @@ Several million years into the future, an advanced space society, known as the B
 
 SCENE
 
-"Hi! I'm Skanda, the leader of the BASEDcatchers, we are so glad to have you training with our fleet! We have created the BASEDscope, it took so many years for us to develop, but we it is finally ready to look through, you want to try?" - Skanda
+"Hi! I'm Skanda, the leader of the Based Catchers, we are so glad to have you training with our fleet! We have created the BASEDscope, it took so many years for us to develop, but we think it is finally ready to look through, you want to try?" - Skanda
 
  -- User character is able to walk up to telescope and look through, as it looks through, a scene is played showing through the galaxy...the user can select different items:
  
- BASEDfuel: user clicks on this and reads a description of what BASEDfuel is:
+ Based fuel: user clicks on this and reads a description of what Based fuel is:
   "BASEDfuel is required for BASEDcatchers to complete any trading within their universe. They claim raw fuel from space debris and convert it to BASEDfuel, giving it a stable value that allows BASEDcatchers to gain certain items that they find valuable. This fuel can also be used to power varios vessels and ships."
  
  Various floating metal: user clicks on this and reads a description of what BASEDmetal is:
