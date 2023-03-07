@@ -15,7 +15,7 @@ interface IERC5058 {
     /**
      * @dev Emitted when `tokenId` token is locked by `operator` from `from`.
      */
-    event Locked(address indexed operator, address indexed from, uint256 indexed tokenId, uint256 expired);
+    event Locked(address indexed operator, address indexed from, uint256 indexed tokenId);
 
     /**
      * @dev Emitted when `tokenId` token is unlocked by `operator` from `from`.
@@ -47,13 +47,12 @@ interface IERC5058 {
      * Requirements:
      *
      * - `tokenId` token must be owned by `owner`.
-     * - `expired` must be greater than block.number
      * - If the caller is not `owner`, it must be approved to lock this token
      * by either {lockApprove} or {setLockApprovalForAll}.
      *
      * Emits a {Locked} event.
      */
-    function lock(uint256 tokenId, uint256 expired) external;
+    function lock(uint256 tokenId) external;
 
     /**
      * @dev Unlock `tokenId` token.
@@ -115,5 +114,5 @@ interface IERC5058 {
     /**
      * @dev Returns the `tokenId` token lock expired time.
      */
-    function lockExpiredTime(uint256 tokenId) external view returns (uint256);
+    //function lockExpiredTime(uint256 tokenId) external view returns (uint256);
 }

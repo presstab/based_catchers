@@ -15,7 +15,7 @@ interface IERC5058 {
     /**
      * @dev Emitted when `tokenId` token is locked by `operator` from `from`.
      */
-    event Locked(address indexed operator, address indexed from, uint256 indexed tokenId, uint256 expired);
+    event Locked(address indexed operator, address indexed from, uint256 indexed tokenId);
 
     /**
      * @dev Emitted when `tokenId` token is unlocked by `operator` from `from`.
@@ -47,13 +47,12 @@ interface IERC5058 {
      * Requirements:
      *
      * - `tokenId` token must be owned by `owner`.
-     * - `expired` must be greater than block.number
      * - If the caller is not `owner`, it must be approved to lock this token
      * by either {lockApprove} or {setLockApprovalForAll}.
      *
      * Emits a {Locked} event.
      */
-    function lock(uint256 tokenId, uint256 expired) external;
+    function lock(uint256 tokenId) external;
 
     /**
      * @dev Unlock `tokenId` token.
@@ -115,7 +114,7 @@ interface IERC5058 {
     /**
      * @dev Returns the `tokenId` token lock expired time.
      */
-    function lockExpiredTime(uint256 tokenId) external view returns (uint256);
+    //function lockExpiredTime(uint256 tokenId) external view returns (uint256);
 }
 
 contract ERC5058 is IERC5058, ERC721Enumerable {
@@ -125,17 +124,12 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
     constructor(string memory name, string memory symbol) public ERC721(name, symbol) {
     }
 
-    struct Lock {
-        address locker;
-        uint256 heightUnlock;
-    }
-
-    mapping(uint256 => Lock) public mapLocks;
+    mapping(uint256 => address) public mapLocks; // token id => locker address
     mapping(uint256 => address) private mapLockApprovals; // token id => address
     mapping(address => mapping(address => bool)) private mapLockApproveAll; // owner => (operator => true/false)
 
     function _isLocked(uint256 tokenId) internal view returns (bool){
-        return mapLocks[tokenId].locker != address(0) && mapLocks[tokenId].heightUnlock >= block.number;
+        return mapLocks[tokenId] != address(0);
     }
     
     function transferFrom(address from, address to, uint256 tokenId) public override (ERC721, IERC721) virtual {
@@ -166,8 +160,8 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
     * - `tokenId` must exist.
     */
     function lockerOf(uint256 tokenId) external override view returns (address locker){
-        require(mapLocks[tokenId].locker != address(0), "lock does not exist");
-        return mapLocks[tokenId].locker;
+        require(!_isLocked(tokenId), "lock does not exist");
+        return mapLocks[tokenId];
     }
 
     /**
@@ -176,16 +170,15 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
     * Requirements:
     *
     * - `tokenId` token must be owned by `owner`.
-    * - `expired` must be greater than block.number
     * - If the caller is not `owner`, it must be approved to lock this token
     * by either {lockApprove} or {setLockApprovalForAll}.
     *
     * Emits a {Locked} event.
     */
-    function lock(uint256 tokenId, uint256 expired) external override {
+    function lock(uint256 tokenId) external override {
         // will fail if invalid tokenId
         address owner = ownerOf(tokenId);
-        require(mapLocks[tokenId].locker == address(0), "Token already locked");
+        require(!_isLocked(tokenId), "Token already locked");
 
         //Check that caller is approved to lock
         if (owner != msg.sender) {
@@ -196,8 +189,8 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
             }
         }
 
-        mapLocks[tokenId] = Lock(msg.sender, expired);
-        emit Locked(msg.sender, msg.sender, tokenId, expired);
+        mapLocks[tokenId] = msg.sender;
+        emit Locked(msg.sender, msg.sender, tokenId);
     }
 
     /**
@@ -211,8 +204,7 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
      * Emits a {Unlocked} event.
      */
     function unlock(uint256 tokenId) external override {
-        require(mapLocks[tokenId].locker != address(0), "lock does not exist");
-        require(mapLocks[tokenId].locker == msg.sender, "msg.sender is not the locker");
+        require(mapLocks[tokenId] == msg.sender, "msg.sender is not the locker");
         delete mapLocks[tokenId];
         emit Unlocked(msg.sender, msg.sender, tokenId);
     }
@@ -230,8 +222,7 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
      */
     function lockApprove(address to, uint256 tokenId) external override {
         require(ownerOf(tokenId) == msg.sender, "cannot approve lock unless tokenid owner");
-        bool locked = mapLocks[tokenId].locker != address(0) && mapLocks[tokenId].heightUnlock < block.number; 
-        require(!locked, "cannot change lock approvals while tokenId is locked");
+        require(!_isLocked(tokenId), "cannot change lock approvals while tokenId is locked");
         
         mapLockApprovals[tokenId] = to;
         emit LockApproval(msg.sender, msg.sender, tokenId);
@@ -292,8 +283,8 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
     /**
      * @dev Returns the `tokenId` token lock expired time.
      */
-    function lockExpiredTime(uint256 tokenId) external override view returns (uint256){
-        return mapLocks[tokenId].heightUnlock;
-    }
+    // function lockExpiredTime(uint256 tokenId) external override view returns (uint256){
+    //     return mapLocks[tokenId].heightUnlock;
+    // }
 
 }

@@ -6,7 +6,7 @@ contract NftTracker is Ownable {
     //The base nft
     IERC721 public baseNft;
 
-    uint16 public maxTeamSize = 7;
+    uint16 public maxTeamSize;
 
     //list of nft's that can be attached to the base nft
     address[] public attachableNft;
@@ -23,6 +23,7 @@ contract NftTracker is Ownable {
 
     //team_id => Team
     mapping(uint256 => Team) public mapTeams; // team_id => Team
+
     //todo list of team_id
 
     //track teams owned by a user address
@@ -31,8 +32,9 @@ contract NftTracker is Ownable {
     //track what team an nft is on
     mapping(uint256 => uint256) public mapNftTeam; //nft hash (keccak(address,id)) => team_id
 
-    constructor (IERC721 _baseNft) {
+    constructor (IERC721 _baseNft, uint16 _maxTeamSize) {
         baseNft = _baseNft;
+        maxTeamSize = _maxTeamSize;
     }
 
     // Get the unique hash of a team
@@ -89,7 +91,7 @@ contract NftTracker is Ownable {
             }
 
             //Lock each nft for an indefinite time
-            IERC5058(nft.addr).lock(nft.id, 99999999999999);
+            IERC5058(nft.addr).lock(nft.id);
 
             //track nft's current team
             mapNftTeam[getHash(nft)] = team_id;
@@ -168,5 +170,10 @@ contract NftTracker is Ownable {
             require(attachableNft[i] != address(_subNft), "subnft already exists!");
         }
         attachableNft.push(address(_subNft));
+    }
+
+    //Set the maximum team size
+    function setMaxTeamSize(uint16 _max) public onlyOwner {
+        maxTeamSize = _max;
     }
 }
