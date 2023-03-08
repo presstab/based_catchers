@@ -1,8 +1,8 @@
 # Teams
 
-COMPLETE BASED TEAM = 1 Based Catcher, 2 S'kicks, 4 droids (any level)
+COMPLETE BASED TEAM = 1 Based Catcher, 2 Based Juniors, 4 droids (any level)
 
-BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 S'kick (can only battle other S'kick only teams, cannot battle against teams with Based Catchers on them), 0 droids needed
+BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 Based Junior (can only battle other Based Junior only teams, cannot battle against teams with Based Catchers on them), 0 droids needed
 
 # Team Components
 
@@ -17,21 +17,21 @@ BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 S'kick (can onl
 
 **Scoring**: 1-100 for each of the following categories: Strength, Valor, Intelligence, Speed, Magic.
 
-## S'kicks
-**Purpose**: S'kicks are a PFP-style character that are valuable partners in combat. S'kicks are more common and easy to obtain than Based Catchers.
+## Based Juniors
+**Purpose**: Based Juniors are a PFP-style character that are valuable partners in combat. Juniors are more common and easy to obtain than Based Catchers.
 
 **Supply**: 110,000 total. 10,000 in mint packs (1 per pack), 100,000 in booster packs (1 in every 10 packs).
 
-**Team Implications**: Limit of 2 S'kicks per team. Having a S'kick will allow you to battle any other team that is lead only by S'kick(s). 
+**Team Implications**: Limit of 2 Juniors per team. Having a Junior will allow you to battle any other team that is lead only by Junior(s). 
 
-**Level Ups**: As the S'kicks spend more time in the training arena, it gains more training experience. As it spends more time in the battle arena it gains more battle experience.
+**Level Ups**: As the Junior spend more time in the training arena, it gains more training experience. As it spends more time in the battle arena it gains more battle experience.
 
 **Scoring**: 1-100 in the following categores: Strength, Valor, Intelligence, Speed, Magic.
 
 ## Droids
 **Purpose**: Droids are a not a unique character. Droids are used to enhance the overall team. Droids specialize in certain traits. 
 
-**Supply**: 1,030,000 total. 30,000 Droids in mint packs (3 per pack). 1,000,000 in booster packs (1 per pack). Burn mechanism will alter supply overtime.
+**Supply**: 2,030,000 total. 30,000 Droids in mint packs (3 per pack). 2,000,000 in booster packs (2 per pack). Burn mechanism will alter supply overtime.
 
 **Team Implications**: Each team can have 4 droids.
 
@@ -46,7 +46,7 @@ These can be added at the time of the battle to help in the following categores:
 **Notes**:
 
 - we may want to consider allowing Level 3 and up droids to have attributes in multiple categories
-- Since there is a burn mechanism, unclear if these will need the training and battle points like the Based Catchers and Side Kicks. Each team can have 4 droids.
+- Since there is a burn mechanism, unclear if these will need the training and battle points like the Based Catchers and Based Juniors. Each team can have 4 droids.
 
 # Tokens, Points, etc:
 
@@ -74,4 +74,4 @@ Place your team in the training arena and earn fuel (can also earn other things?
 
 ## Battle Arena
 
-Choose to battle against another team (must have Based Catcher on team to battle another team with a Based Catcher). Teams are allowed to wager fuel, droids, and S'kicks during these battles. If your team loses, anything wagered will go to the team that wins (10% of fuel to community treasury). Can also allow others (no need to own anything in the BCDC ecosystem) to wager on Battles of the Week or tournaments.
+Choose to battle against another team (must have Based Catcher on team to battle another team with a Based Catcher). Teams are allowed to wager fuel, droids, and Based Juniors during these battles. If your team loses, anything wagered will go to the team that wins (10% of fuel to community treasury). Can also allow others (no need to own anything in the BCDC ecosystem) to wager on Battles of the Week or tournaments.
