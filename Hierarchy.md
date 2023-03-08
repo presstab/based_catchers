@@ -1,10 +1,46 @@
-BCDC Ecoysystem Hierarchy
+# BCDC Ecosystem Summary
 
-Based Catchers: The main PFP. The top of the food chain. Having a Based Catcher will allow you to battle any other team that also has a Based Catcher. There will initially be 10,000 Based Catchers in the 10,000 mint packs (1 in each), and 10,000 in the 1,000,000 booster packs (1/100). As the Based Catcher spends more time in the training arena it gains more training experience. As it spends more time in the battle arena it gains more battle experience. Can have 1 based catcher per team. Each Based Catcher will have a score out of 100 in the following categores: Strength, Valor, Intelligence, Speed, Magic.
+## Team Members
 
-S'kicks: This is the secondary PFP. Will still act as a standalone PFP, but not be viewed as valuable as the Based Catchers. Having a S'kick will allow you to battle any other team that is lead only by S'kick(s). There will initially be 10,000 S'kicks in the 10,000 mint packs (1 in each), and 100,000 in the 1,000,000 booster packs (1/10). As the S'kicks spend more time in the training arena, it gains more training experience. As it spends more time in the battle arena it gains more battle experience. Can have 2 S'kicks per team. Each S'kick will have a score out of 100 in the following categores: Strength, Valor, Intelligence, Speed, Magic.
+### Based Catchers 
+**Purpose**: Based Catchers are a PFP-style character and are the flagship product of the BCDC ecosystem.
 
-Droids: These are not PFPs. These are used to enhance the overall team, as each Droid can have point attributes in ONLY one of the following categories: Strength, Valor, Intelligence, Speed, Magic (we may want to consider allowing Level 3 and up droids to have attributes in multiple categories). There will be 5 droid levels, and to get to the next level one must burn 5 of the previous level. IE burn 5 level 1 droid to get a level 2 droid. (in the end, will be 3125 Level 1 droid = Level 5 droid). The initial 10,000 mint packs will have 30,000 droids (3 per pack). The 1,000,000 booster packs typically will have at least 1 droid per pack. In order to regulate the supply, the burn mechanism will be useful, as 1,000,000 Level 1 droids only = 320 Level 5 Droids. Since there is a burn mechanism, unclear if these will need the training and battle points like the Based Catchers and Side Kicks. Each team can have 4 droids.
+**Supply**: 20,000 total. 10,000 in mint packs (1 per pack), 10,000 in booster packs (1 in every 100 packs).
+
+**Team Implications**: Maximum of 1 Based Catcher per team. Required in order to battle an opposing team that has a Based Catcher. 
+
+**Level Ups**: As the Based Catcher spends more time in the training arena it gains more training experience. As it spends more time in the battle arena it gains more battle experience. Can have 1 based catcher per team. 
+
+**Scoring**: 1-100 for each of the following categories: Strength, Valor, Intelligence, Speed, Magic.
+
+### S'kicks
+**Purpose**: S'kicks are a PFP-style character that are valuable partners in combat. S'kicks are more common and easy to obtain than Based Catchers.
+
+**Supply**: 110,000 total. 10,000 in mint packs (1 per pack), 100,000 in booster packs (1 in every 10 packs).
+
+**Team Implications**: Limit of 2 S'kicks per team. Having a S'kick will allow you to battle any other team that is lead only by S'kick(s). 
+
+**Level Ups**: As the S'kicks spend more time in the training arena, it gains more training experience. As it spends more time in the battle arena it gains more battle experience.
+
+**Scoring**: 1-100 in the following categores: Strength, Valor, Intelligence, Speed, Magic.
+
+### Droids
+**Purpose**: Droids are a not a unique character. Droids are used to enhance the overall team. Droids specialize in certain traits. 
+
+**Supply**: 1,030,000 total. 30,000 Droids in mint packs (3 per pack). 1,000,000 in booster packs (1 per pack). Burn mechanism will alter supply overtime.
+
+**Team Implications**: Each team can have 4 droids.
+
+**Scoring**: Each Droid can have point attributes in ONLY one of the following categories: Strength, Valor, Intelligence, Speed, Magic
+
+**Level Ups**: There will be 5 droid levels, and to get to the next level one must burn 5 of the previous level. IE burn 5 level 1 droid to get a level 2 droid. (in the end, will be 3125 Level 1 droid = Level 5 droid)
+
+**Notes**:
+
+- we may want to consider allowing Level 3 and up droids to have attributes in multiple categories
+- Since there is a burn mechanism, unclear if these will need the training and battle points like the Based Catchers and Side Kicks. Each team can have 4 droids.
+
+## Tokens:
 
 Fuel (?): Fuel will be used to help power the ecosystem. Fuel will be earned during training. Fuel can be used to wager during battles. Fuel can be used to mint booster packs. Each mint pack will contain 100 fuel.
 
@@ -14,6 +50,8 @@ Single use boosters: These can be added at the time of the battle to help in the
 COMPLETE BASED TEAM = 1 Based Catcher, 2 S'kicks, 4 droids (any level)
 
 BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 S'kick (can only battle other S'kick only teams, cannot battle against teams with Based Catchers on them), 0 droids needed
+
+## Team Locations
 
 Training Arena: Place your team in the training arena and earn fuel (can also earn other things?)
 
