@@ -1,14 +1,12 @@
-# BCDC Ecosystem Summary
-
-## Teams
+# Teams
 
 COMPLETE BASED TEAM = 1 Based Catcher, 2 S'kicks, 4 droids (any level)
 
 BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 S'kick (can only battle other S'kick only teams, cannot battle against teams with Based Catchers on them), 0 droids needed
 
-## Team Components
+# Team Components
 
-### Based Catchers 
+## Based Catchers 
 **Purpose**: Based Catchers are a PFP-style character and are the flagship product of the BCDC ecosystem.
 
 **Supply**: 20,000 total. 10,000 in mint packs (1 per pack), 10,000 in booster packs (1 in every 100 packs).
@@ -19,7 +17,7 @@ BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 S'kick (can onl
 
 **Scoring**: 1-100 for each of the following categories: Strength, Valor, Intelligence, Speed, Magic.
 
-### S'kicks
+## S'kicks
 **Purpose**: S'kicks are a PFP-style character that are valuable partners in combat. S'kicks are more common and easy to obtain than Based Catchers.
 
 **Supply**: 110,000 total. 10,000 in mint packs (1 per pack), 100,000 in booster packs (1 in every 10 packs).
@@ -30,7 +28,7 @@ BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 S'kick (can onl
 
 **Scoring**: 1-100 in the following categores: Strength, Valor, Intelligence, Speed, Magic.
 
-### Droids
+## Droids
 **Purpose**: Droids are a not a unique character. Droids are used to enhance the overall team. Droids specialize in certain traits. 
 
 **Supply**: 1,030,000 total. 30,000 Droids in mint packs (3 per pack). 1,000,000 in booster packs (1 per pack). Burn mechanism will alter supply overtime.
@@ -41,7 +39,7 @@ BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 S'kick (can onl
 
 **Level Ups**: There will be 5 droid levels, and to get to the next level one must burn 5 of the previous level. IE burn 5 level 1 droid to get a level 2 droid. (in the end, will be 3125 Level 1 droid = Level 5 droid)
 
-### Single use boosters
+## Single use boosters
 
 These can be added at the time of the battle to help in the following categores: Strength, Valor, Intelligence, Speed, Magic. These will include items like based grenades, based nukes, based lasers, based shields, based potion, based encyclopedia, etc. These will be one time use only and will be burned after a battle. These will be distributed via the booster packs. 
 
@@ -50,7 +48,7 @@ These can be added at the time of the battle to help in the following categores:
 - we may want to consider allowing Level 3 and up droids to have attributes in multiple categories
 - Since there is a burn mechanism, unclear if these will need the training and battle points like the Based Catchers and Side Kicks. Each team can have 4 droids.
 
-## Tokens, Points, etc:
+# Tokens, Points, etc:
 
 **Fuel** (token): Fuel will be used to help power the ecosystem. Fuel will be earned during training. Fuel can be used to wager during battles. Fuel can be used to mint booster packs. Each mint pack will contain 100 fuel.
 
@@ -58,9 +56,9 @@ These can be added at the time of the battle to help in the following categores:
 
 **Training Experience**
 
-## Battle System
+# Battle System
 
-### Battle Traits
+## Battle Traits
 
 - Strength
 - Valor
@@ -68,12 +66,12 @@ These can be added at the time of the battle to help in the following categores:
 - Speed
 - Magic
 
-## Locations
+# Game Locations
 
-### Training Arena
+## Training Arena
 
 Place your team in the training arena and earn fuel (can also earn other things?)
 
-### Battle Arena
+## Battle Arena
 
 Choose to battle against another team (must have Based Catcher on team to battle another team with a Based Catcher). Teams are allowed to wager fuel, droids, and S'kicks during these battles. If your team loses, anything wagered will go to the team that wins (10% of fuel to community treasury). Can also allow others (no need to own anything in the BCDC ecosystem) to wager on Battles of the Week or tournaments.
