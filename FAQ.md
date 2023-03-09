@@ -1,8 +1,5 @@
 # FAQ
 
-##Q: Why are you guys making an NFT?
-##A: BCDC is a game powered by NFTs, and we figure this game will be fun for all of you to play. We also are sick of what we are currently seeing in the space and feel like we can build something that will last and for all of you to enjoy!
-
 ## Q: What are your plans for royalties?
 ## A: Lol. Royalties. We will never say no to free money, but we won't rely on royalties to power our ecosystem. Not very based if you ask us. 2%, but turn em off and trade on blur if you want. We don't care.
 
@@ -18,3 +15,5 @@
 ## Q: Who are the Founders?
 ## A: Tom: Description; Adam: Description; Nikhil: Description (can click on the PFP and it will take them to our twitters)
 
+##Q: Why are you guys making an NFT?
+##A: BCDC is a game powered by NFTs, and we figure this game will be fun for all of you to play. We also are sick of what we are currently seeing in the space and feel like we can build something that will last and for all of you to enjoy!
