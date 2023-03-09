@@ -118,7 +118,7 @@ These can be added at the time of the battle to help in the following categores:
 - Intelligence vs. Strength: Teams with high intelligence will have an advantage over teams with with high strength, and will often outmaneuver them in battle.
 - Speed vs. Strength: Teams with high speed will have an advantage over teams with high strength, and will often evade them in battle.
 - Magic vs. Speed: Teams with high magic will have an advantage over teams with high speed, and will often slow them down in battle.
-- Strength vs. Magic: Teams with high strength will have an advantage over teams with high magic, and will often break them down.
+- Strength vs. Magic: Teams with high strength will have an advantage over teams with high magic, and will often break them down in battle.
 
 
 # Game Locations
