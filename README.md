@@ -60,11 +60,11 @@ These can be added at the time of the battle to help in the following categores:
 
 ## Battle Traits
 
-- Strength
-- Valor
-- Intelligence
-- Speed
-- Magic
+- Strength: Characters with high strength have raw physical power to crush obstacles and overpower their foes.
+- Valor: Characters with high valor show courage and determination in battle, inspiring their allies and striking fear into their enemies.
+- Intelligence: Characters with high intelligence are strategic thinkers, able to outsmart their opponents and solve complex problems.
+- Speed: Characters with high speed are lightning-fast and agile, able to dodge attacks and move quickly around their opponents.
+- Magic: Characters with high magic can conjure powerful spells and harness the mystical energies of the universe aid them in battle.
 
 # Game Locations
 
