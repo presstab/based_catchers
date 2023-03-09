@@ -46,46 +46,46 @@ These can be added at the time of the battle to help in the following categores:
 **Based Grenade:** Can be used by any team with any experience. Will add 20 strength points in battle.
   Supply: (1/10 packs, 100,000 total, supply diminishes as they are burned with use...this is true of all single use items)
 
-**Based Lasers:** Can only be used by a team with with >100 battle experience. Will add 50 strength points in battle.
+**Based Lasers:** Can only be used by a team with with >100 training experience. Will add 50 strength points in battle.
   Supply: (1/30 packs, 33,333 total)
 
-**Based Nuke:** Can only be used by a team with >200 battle experience. Will add 100 strength points in battle.
+**Based Nuke:** Can only be used by a team with >200 training experience. Will add 100 strength points in battle.
   Supply: (1/100 packs, 10,000 total)
 
 **Based Courage:** Can be used by any team with any experience. Will add 20 Valor points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Amulet:** Can be used by a team with >100 battle experience. Will add 50 Valor points in battle
+**Based Amulet:** Can be used by a team with >100 training experience. Will add 50 Valor points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Heart:** Can be used by a team with >200 battle experience. Will add 100 valor points in battle.
+**Based Heart:** Can be used by a team with >200 training experience. Will add 100 valor points in battle.
   Supply: (1/100 packs, 10,000 total)
 
 **Based Book:** Can be used by any team with any experience. Will add 20 Intelligence points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Encylopedia:** Can be used by a team with >100 battle experience. Will add 50 Intelligence points in battle
+**Based Encylopedia:** Can be used by a team with >100 training experience. Will add 50 Intelligence points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Computer:** Can be used by a team with >200 battle experience. Will add 100 Intelligence points in battle
+**Based Computer:** Can be used by a team with >200 training experience. Will add 100 Intelligence points in battle
   Supply: (1/100 packs, 10,000 total)
 
 **Based Caffeine:** Can be used by any team with any experience. Will add 20 Speed points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Boosters:** Can be used by a team with >100 battle experience. Will add 50 Speed points in battle
+**Based Boosters:** Can be used by a team with >100 training experience. Will add 50 Speed points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Rockets:** Can be used by a team with >200 battle experience. Will add 100 Speed points in battle
+**Based Rockets:** Can be used by a team with >200 training experience. Will add 100 Speed points in battle
   Supply: (1/100 packs, 10,000 total)
 
 **Based Magic Potion:** Can be used by any team with any experience. Will add 20 Magic points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Magic Staff:** Can be used by a team with >100 battle experience. Will add 50 Magic points in battle
+**Based Magic Staff:** Can be used by a team with >100 training experience. Will add 50 Magic points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Magic Ring:** Can be used by a team with >200 battle experience. Will add 100 Speed points in battle
+**Based Magic Ring:** Can be used by a team with >200 training experience. Will add 100 Speed points in battle
   Supply: (1/100 packs, 10,000 total)
 
 **Notes**:
