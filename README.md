@@ -111,6 +111,16 @@ These can be added at the time of the battle to help in the following categores:
 - Speed: Characters with high speed are lightning-fast and agile, able to dodge attacks and move quickly around their opponents.
 - Magic: Characters with high magic can conjure powerful spells and harness the mystical energies of the universe aid them in battle.
 
+## Battle Trait Interactions:
+
+- Strength vs. Valor: Teams with high strength will have an advantage over teams with high valor, and will often overpower them in battle.
+- Valor vs. Intelligence: Teams with high valor will have an advantage over teams with high intelligence, and will often outlast them in battle.
+- Intelligence vs. Strength: Teams with high intelligence will have an advantage over teams with with high strength, and will often outmaneuver them in battle.
+- Speed vs. Strength: Teams with high speed will have an advantage over teams with high strength, and will often evade them in battle.
+- Magic vs. Speed: Teams with high magic will have an advantage over teams with high speed, and will often slow them down in battle.
+- Strength vs. Magic: Teams with high strength will have an advantage over teams with high magic, and will often break them down.
+
+
 # Game Locations
 
 ## Training Arena
