@@ -1,8 +1,8 @@
 # FAQ
 
 
-##Q: Why are you making an NFT?
-##A: BCDC is a gaming ecosystem that is powered by NFTs, and we figure this game will be fun for all of you to play. We also are sick of what we are currently seeing in the space and think we can build something that will last, and that will be enjoyable to all of you!
+## Q: Why are you making an NFT?
+## A: BCDC is a gaming ecosystem that is powered by NFTs, and we figure this game will be fun for all of you to play. We also are sick of what we are currently seeing in the space and think we can build something that will last, and that will be enjoyable to all of you!
 
 ## Q: Who are the Founders?
 ## A: Tom: Description; Adam: Description; Nikhil: Description (can click on the PFP and it will take them to our twitters)
