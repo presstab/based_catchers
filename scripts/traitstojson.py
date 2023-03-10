@@ -11,7 +11,6 @@ for row in reader:
 		i = i + 1
 		continue
 
-	##print(row)
 	attributes = [
 		{
 			"trait_type": "Armor",

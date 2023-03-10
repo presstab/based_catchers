@@ -2,6 +2,18 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "./ierc5058.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
+interface ICharacterData {
+    function data(uint256 _hash) external view returns (uint8 strength, uint8 valor, uint8 intelligence, uint8 speed, uint8 magic);
+}
+
+struct Traits {
+    uint8 strength;
+    uint8 valor;
+    uint8 intelligence;
+    uint8 speed;
+    uint8 magic;
+}
+
 contract NftTracker is Ownable {
     //The base nft
     IERC721 public baseNft;
@@ -10,6 +22,9 @@ contract NftTracker is Ownable {
 
     //list of nft's that can be attached to the base nft
     address[] public attachableNft;
+
+    //Contract that tracks on chain metadata for each character
+    ICharacterData public characterData; 
 
     struct NftInstance {
         address addr; // the address of the nft contract
@@ -141,13 +156,39 @@ contract NftTracker is Ownable {
                 if (count > 1) {
                     userTeams[i] = userTeams[count - 1];
                 }
-                userTeams.pop(); //todo test this
+                userTeams.pop();
                 break;
             }
         }
 
         //Delete team from mapping
         delete mapTeams[_id];
+    }
+
+    function battle(uint256 _idAttacker, uint256 _idDefender) public returns (uint256) {
+        Team storage teamAttack = mapTeams[_idAttacker];
+        Team storage teamDefend = mapTeams[_idDefender];
+        require(teamAttack.length > 0, "err: team attack does not exist");
+        require(teamDefend.length > 0, "err: team defend does not exist");
+
+        //Attacker must be the owner of the team //todo: better on gas to store owner address in the team struct?
+        require(IERC721(teamAttack.members[0].addr).ownerOf(teamAttack.members[0].id) == msg.sender, "err: msg.sender does not own nft");
+
+        //Add up traits of the team
+        uint8 lenAttack = uint8(teamAttack.length);
+        Traits memory traitsAttack;
+        for (uint8 i = 0; i < lenAttack; i++) {
+            NftInstance memory nft = teamAttack.members[i];
+            Traits memory traits;
+            (traits.strength, traits.valor, traits.intelligence, traits.speed, traits.magic) = characterData.data(getHash(nft));
+            traitsAttack.strength += traits.strength;
+            traitsAttack.valor += traits.valor;
+            traitsAttack.intelligence += traits.intelligence;
+            traitsAttack.speed += traits.speed;
+            traitsAttack.magic += traits.magic;
+
+        }
+        
     }
 
     //Get the subnft slot within attachableNft array
@@ -175,5 +216,10 @@ contract NftTracker is Ownable {
     //Set the maximum team size
     function setMaxTeamSize(uint16 _max) public onlyOwner {
         maxTeamSize = _max;
+    }
+
+    //Set the contract that tracks nft data
+    function setNftData(address _characterData) public onlyOwner {
+        characterData = _characterData;
     }
 }
