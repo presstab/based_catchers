@@ -14,7 +14,7 @@
 ## A: Lol. Merch. No thank you. Go buy a suit at your local tailor if you want something nice.
 
 ## Q: What are your plans to manage the floor price?
-## A: The BCDC ecosystem is a game. We don't care for nor do we manage the floor price. We'll let you weirdos worry about that.
+## A: BCDC ecosystem is a game. We don't care for nor do we manage the floor price. We'll let you weirdos worry about that.
 
 ## Q: Where did the art come from?
 ## A: Our art is a combination of ideas formulated by the founders, later perfected by a graphic designer. His name is Ian. He is a badass. Here is a link to his website: .
