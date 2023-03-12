@@ -1,28 +1,5 @@
 # FAQ
 
-
-## Why are you making an NFT?
-BCDC is a gaming ecosystem that is powered by NFTs, and we figure this game will be fun for all of you to play. We also are sick of what we are currently seeing in the space and think we can build something that will last, and that will be enjoyable to all of you!
-
-## Who are the Founders?
-Tom: Description; Adam: Description; Nikhil: Description (can click on the PFP and it will take them to our twitters)
-
-## What are your plans for royalties?
-Lol. Royalties. We will never say no to free money, but we won't rely on royalties to power our ecosystem. Not very based if you ask us. 2%, but turn em off and trade on blur if you want. We don't care.
-
-## What are your plans for merch?
-Lol. Merch. No thank you. Go buy a suit at your local tailor if you want something nice.
-
-## What are your plans to manage the floor price?
-BCDC ecosystem is a game. We don't care for nor do we manage the floor price. We'll let you weirdos worry about that.
-
-## Where did the art come from?
-Our art is a combination of ideas formulated by the founders, later perfected by a graphic designer. His name is Ian. He is a badass. Here is a link to his website: .
-
-
-
-# FAQ
-
 ## What is Based Catchers?
 Based Catcher Digital Collective (BCDC) is a gaming ecosystem powered by blockchain technology with NFTs as fun to collect as they are to play and interact with.
 
