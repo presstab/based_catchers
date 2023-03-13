@@ -1,8 +1,8 @@
 # Teams
 
-COMPLETE BASED TEAM = 1 Based Catcher, 2 Based Juniors, 4 droids (any level)
+COMPLETE BASED TEAM = 1 Based Catcher, 5 Helpers
 
-BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 Based Junior (can only battle other Based Junior only teams, cannot battle against teams with Based Catchers on them), 0 droids needed
+BATTLE/TRAINING READY TEAM = 1 Based Catcher alone can battle
 
 # Team Components
 
@@ -11,33 +11,32 @@ BATTLE/TRAINING READY TEAM = 0 based catchers needed, at least 1 Based Junior (c
 
 **Supply**: 20,000 total. 10,000 in mint packs (1 per pack), 10,000 in booster packs (1 in every 100 packs).
 
-**Team Implications**: Maximum of 1 Based Catcher per team. Required in order to battle an opposing team that has a Based Catcher. 
+**Team Implications**: Maximum of 1 Based Catcher per team. Required in order to battle. 
 
 **Level Ups**: As the Based Catcher spends more time in the training arena it gains more training experience (0-1000). As it spends more time in the battle arena it gains more battle experience (0-1000). Can have 1 based catcher per team. 
 
 **Scoring**: 1-100 for each of the following categories: Strength, Valor, Intelligence, Speed, Magic.
 
-## Based Juniors
-**Purpose**: Based Juniors are a PFP-style character that are valuable partners in combat. Juniors are more common and easy to obtain than Based Catchers.
 
-**Supply**: 110,000 total. 10,000 in mint packs (1 per pack), 100,000 in booster packs (1 in every 10 packs).
+## Based Helpers
 
-**Team Implications**: Limit of 2 Juniors per team. Having a Junior will allow you to battle any other team that is lead only by Junior(s). 
+Based Helpers will be categorized into 6 evolutionary phases: Compactors, Dumpsters, Scavengers, Assassins, Demigods, and Gods.
 
-**Level Ups**: As the Junior spend more time in the training arena, it gains more training experience (0-1000). As it spends more time in the battle arena it gains more battle experience (0-1000).
+**Purpose**: Based Helpers initially are a not a unique character. Droids are used to enhance the overall team. Droids specialize in certain traits. 
 
-**Scoring**: 1-100 in the following categores: Strength, Valor, Intelligence, Speed, Magic.
+**Supply**: 3,050,000 total Compactors --> 610,000 Dumpsters --> 122,000 Scavengers --> 24,400 Assassins --> 4880 Demigods --> 976 Gods. 50,000 Compcators in mint packs (5 per pack). 3,000,000 Compcators in booster packs (3 per pack). Burn mechanism will alter supply overtime.
 
-## Droids
-**Purpose**: Droids are a not a unique character. Droids are used to enhance the overall team. Droids specialize in certain traits. 
+**Team Implications**: Each team can have up to 5 Helpers.
 
-**Supply**: 2,030,000 total. 30,000 Droids in mint packs (3 per pack). 2,000,000 in booster packs (2 per pack). Burn mechanism will alter supply overtime.
+**Scoring**: Scoring will vary by Evolutionary Phase
+  - Compcators: 10 points each in two categories (Strength, Valor, Intelligence, Speed, Magic)
+  - Dumpsters: 20 points each in two categories
+  - Scavengers: 40 points each in three categories
+  - Assassins: 80 points each in three categories
+  - Demigods: 80 points each in every category
+  - Gods: 160 points each in every category
 
-**Team Implications**: Each team can have 4 droids.
-
-**Scoring**: Each Droid can have point attributes in ONLY one of the following categories: Strength, Valor, Intelligence, Speed, Magic
-
-**Level Ups**: There will be 5 droid levels, and to get to the next level one must burn 5 of the previous level. IE burn 5 level 1 droid to get a level 2 droid. (in the end, will be 3125 Level 1 droid = Level 5 droid)
+**Level Ups**: In order to go up in evolutionary phase, one must burn 5 of the previous phase. IE burn 5 compcators to get 1 dumpster, burn 5 dumpsters to get 1 scavenger and so on. At higher levels, users may be required to also add fuel and single use NFTs/boosters in order to go up in evoluationary phase
 
 ## Single use boosters
 
@@ -46,52 +45,51 @@ These can be added at the time of the battle to help in the following categores:
 **Based Grenade:** Can be used by any team with any experience. Will add 20 strength points in battle.
   Supply: (1/10 packs, 100,000 total, supply diminishes as they are burned with use...this is true of all single use items)
 
-**Based Lasers:** Can only be used by a team with with >100 training experience. Will add 50 strength points in battle.
+**Based Lasers:** Can only be used by a team with with >100 training experience. Will add 100 strength points in battle.
   Supply: (1/30 packs, 33,333 total)
 
-**Based Nuke:** Can only be used by a team with >200 training experience. Will add 100 strength points in battle.
+**Based Nuke:** Can only be used by a team with >200 training experience. Will add 500 strength points in battle.
   Supply: (1/100 packs, 10,000 total)
 
 **Based Courage:** Can be used by any team with any experience. Will add 20 Valor points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Amulet:** Can be used by a team with >100 training experience. Will add 50 Valor points in battle
+**Based Amulet:** Can be used by a team with >100 training experience. Will add 100 Valor points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Heart:** Can be used by a team with >200 training experience. Will add 100 valor points in battle.
+**Based Heart:** Can be used by a team with >200 training experience. Will add 500 valor points in battle.
   Supply: (1/100 packs, 10,000 total)
 
 **Based Book:** Can be used by any team with any experience. Will add 20 Intelligence points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Encylopedia:** Can be used by a team with >100 training experience. Will add 50 Intelligence points in battle
+**Based Encylopedia:** Can be used by a team with >100 training experience. Will add 100 Intelligence points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Computer:** Can be used by a team with >200 training experience. Will add 100 Intelligence points in battle
+**Based Computer:** Can be used by a team with >200 training experience. Will add 500 Intelligence points in battle
   Supply: (1/100 packs, 10,000 total)
 
 **Based Caffeine:** Can be used by any team with any experience. Will add 20 Speed points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Boosters:** Can be used by a team with >100 training experience. Will add 50 Speed points in battle
+**Based Boosters:** Can be used by a team with >100 training experience. Will add 100 Speed points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Rockets:** Can be used by a team with >200 training experience. Will add 100 Speed points in battle
+**Based Rockets:** Can be used by a team with >200 training experience. Will add 500 Speed points in battle
   Supply: (1/100 packs, 10,000 total)
 
-**Based Magic Potion:** Can be used by any team with any experience. Will add 20 Magic points in battle.
+**Based Potion:** Can be used by any team with any experience. Will add 20 Magic points in battle.
   Supply: (1/10 packs, 100,000 total)
 
-**Based Magic Staff:** Can be used by a team with >100 training experience. Will add 50 Magic points in battle
+**Based Staff:** Can be used by a team with >100 training experience. Will add 100 Magic points in battle
   Supply: (1/30 packs, 33,333 total)
 
-**Based Magic Ring:** Can be used by a team with >200 training experience. Will add 100 Speed points in battle
+**Based Ring:** Can be used by a team with >200 training experience. Will add 500 Speed points in battle
   Supply: (1/100 packs, 10,000 total)
 
 **Notes**:
 
-- we may want to consider allowing Level 3 and up droids to have attributes in multiple categories
-- Since there is a burn mechanism, unclear if these will need the training and battle points like the Based Catchers and Based Juniors. Each team can have 4 droids.
+- Since there is a burn mechanism, unclear if these will need the training and battle points like the Based Catchers. Each team can have 5 Helpers.
 
 # Tokens, Points, etc:
 
