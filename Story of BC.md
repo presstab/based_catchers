@@ -3,7 +3,7 @@ The Story of the Based Catchers
 
 Part 1
 
-Several million years into the future, an advanced space society, known as the BASEDcatchers, have been exploring the depths of their own galaxy. A new technology developed by this advanced civilization allows them to look millions of light years away, in great detail.
+Several million years into the future, an advanced space society, known as the Based Catchers, have been exploring the depths of their own galaxy. A new technology developed by this advanced civilization allows them to look millions of light years away, in great detail.
 
 SCENE
 
@@ -25,13 +25,9 @@ Once user has clicked through these two items, a shining bright planet will appe
 
 User is shown the planet again, this time with a bluish glow
 
-"That means there are also signs of life on this planet. I don't know if that is a good or bad thing. We are a fearless species, but an advanced life form with unlimited Sona? That could be dangerous. A more primitive life form however? Well that might not be an issue. Now, run along, it's time we start our training. In order to earn your necklace, you will have to also train 5 of your BASEDfriends/pals/buddies (this needs to be clear it is some sort of pet) to help us in our explopration. We will set sail for Planet Sona in 2 months time. You and 10,000 other Based catchers will be joining our first fleet. The other 10,000 who are training with you will join us in due time as we deem necessary. We also will need you to help train the Sidekicks, you know the S'kicks? Make sure they are ready. Each of you will travel with one and they will continue to breed while we are out there"
+"That means there are also signs of life on this planet. I don't know if that is a good or bad thing. We are a fearless species, but an advanced life form with unlimited Sona? That could be dangerous. A more primitive life form however? Well that might not be an issue. Now, run along, it's time we start our training. In order to earn your necklace, you will need to prove yourself a strong and corageous warrior ready to leave your loved ones behind. We will set sail for Planet Sona in 2 months time. You and 10,000 other Based catchers will be joining our first fleet. The other 10,000 who are training with you will join us in due time as we deem necessary."
   
 Part 2
-
-SCENE: User is in an open field with 2+ S'kicks. User is able to click on each S'kick and perform a special move: Strength, Valor, Speed, Intelligence, Magic. 
-
-Part 3
 
 SCENE: User is on spaceship, in the captains office with Skanda
 
@@ -43,13 +39,13 @@ Based grenade: This is a mildly powerful weapon in order to disperse any rivals
 
 Based nuke: This is an extremely destructive weapon which will cause mass casualties and damage
 
-Based shields: These are defense shields which protect Based Catchers and S'kicks.
+Based shields: These are defense shields which protect Based Catchers.
 
-Based potion: A magical potion which allows Based Catchers and S'kicks to think more creatively
+Based potion: A magical potion which allows Based Catchers to think more creatively
 
 Based books: Lore from the history of the Based Catchers which allows individuals to gain more knowledge in various battle mechanisms
 
-Based coffee: A drink which makes Based Catchers and S'kicks much quicker
+Based coffee: A drink which makes Based Catchers much quicker
 
 Ship continues to zoom towards Planet Sona. as it approaches closer...
 
@@ -58,9 +54,9 @@ Ship continues to zoom towards Planet Sona. as it approaches closer...
 As they get closer and closer to Planet Sona, their necklaces continue to vibrate at a more intense frequency 
 
 
-Part 4
+Part 3
 
-In a speech to the audience of 10k BASEDcatchers:
+In a speech to the audience of 10k Based catchers:
 
 "We have landed fellow catchers, a long journey that we have been preparing for over the course of the past two years."
 
@@ -70,16 +66,16 @@ Crowd cheers
 
 Scene changes...
 
-Skanda + S'kick and User + S'kick and random Based catcher and S'kick (three pairs) are walking through a mystery planet.
+Skanda, a random based catcher, and the User/Player are walking through a mysterious field.
 
 "I feel such a strong attachment with my necklace and this land, it just feels as if we have been here before." -Skanda
 
 "Yeah, I wonder what that means?" - random
 
-As they continue to walk, unkowningly to both of them, a trail of Droids starts trailing them. After ~10 seconds, Skanda notices
+As they continue to walk, unkowningly to both of them, a trail of Helpers starts trailing them. After ~10 seconds, Skanda notices
 
 "Oi! who are you, are you covered in Sona??" 
 
-The droid gets closer and closer, Skanda and his friend are overcome with curiosity and greed. As the droid gets closer Skanda's eyes glow red. He asks the Droid to join him, and once he does, he and the droid + his friend attack the random Based catcher and defeat him.
+A Compcator gets closer and closer, Skanda and his friend are overcome with curiosity and greed. As the compcator gets closer Skanda's eyes glow red. He asks the compcator to join him, and once he does, he and the droid + his friend attack the random Based catcher and defeat him.
 
-Scene dissolves...voiceover is heard "And that is the story of the battle of the Based catchers. Unfortunately, the droids covered in Sona were too valuable for any of the Catchers to recall their training and the mission they had set for. Instead, they would set to conquer Planet Sona. Each Based catcher will choose two Based friends to be loyal to their team. Additionally, 4 droids are able to join a team, the stronger they are, the more powerful the team can become. Teams can enter training to earn fuel, or they can choose to battle other teams to earn rewards from one another. A S'kick alone can battle and train, however they cannot battle against teams with Based Catchers."
+Scene dissolves...voiceover is heard "And that is the story of the battle of the Based catchers. Unfortunately, the helpers covered in Sona were too valuable for any of the Catchers to recall their training and the mission they had set for. Instead, they would set to conquer Planet Sona. Each Based catcher will choose 5 helpers to form a team, the stronger they are, the more powerful the team can become. Teams can enter training to earn fuel, or they can choose to battle other teams to earn rewards from one another.
