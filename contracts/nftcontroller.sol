@@ -165,7 +165,7 @@ contract NftTracker is Ownable {
         delete mapTeams[_id];
     }
 
-    function battle(uint256 _idAttacker, uint256 _idDefender) public returns (uint256) {
+    function battle(uint256 _idAttacker, uint256 _idDefender) public view returns (uint256) {
         Team storage teamAttack = mapTeams[_idAttacker];
         Team storage teamDefend = mapTeams[_idDefender];
         require(teamAttack.length > 0, "err: team attack does not exist");
@@ -174,7 +174,7 @@ contract NftTracker is Ownable {
         //Attacker must be the owner of the team //todo: better on gas to store owner address in the team struct?
         require(IERC721(teamAttack.members[0].addr).ownerOf(teamAttack.members[0].id) == msg.sender, "err: msg.sender does not own nft");
 
-        //Add up traits of the team
+        //Add up traits of each team
         uint8 lenAttack = uint8(teamAttack.length);
         Traits memory traitsAttack;
         for (uint8 i = 0; i < lenAttack; i++) {
@@ -186,9 +186,33 @@ contract NftTracker is Ownable {
             traitsAttack.intelligence += traits.intelligence;
             traitsAttack.speed += traits.speed;
             traitsAttack.magic += traits.magic;
-
         }
-        
+
+        uint8 lenDefend = uint8(teamDefend.length);
+        Traits memory traitsDefend;
+        for (uint8 i = 0; i < lenDefend; i++) {
+            NftInstance memory nft = teamDefend.members[i];
+            Traits memory traits;
+            (traits.strength, traits.valor, traits.intelligence, traits.speed, traits.magic) = characterData.data(getHash(nft));
+            traitsDefend.strength += traits.strength;
+            traitsDefend.valor += traits.valor;
+            traitsDefend.intelligence += traits.intelligence;
+            traitsDefend.speed += traits.speed;
+            traitsDefend.magic += traits.magic;
+        }
+
+        //Modify traits of each team using random oracle
+
+
+        //Use battle algorithm to determine winner
+        uint64 scoreAttack = traitsAttack.strength + traitsAttack.valor + traitsAttack.intelligence + traitsAttack.speed + traitsAttack.magic;
+        uint64 scoreDefend = traitsDefend.strength + traitsDefend.valor + traitsDefend.intelligence + traitsDefend.speed + traitsDefend.magic;
+    
+        if (scoreAttack > scoreDefend) {
+            return _idAttacker;
+        }
+
+        return _idDefender;
     }
 
     //Get the subnft slot within attachableNft array
@@ -220,6 +244,6 @@ contract NftTracker is Ownable {
 
     //Set the contract that tracks nft data
     function setNftData(address _characterData) public onlyOwner {
-        characterData = _characterData;
+        characterData = ICharacterData(_characterData);
     }
 }
