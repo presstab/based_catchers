@@ -1,34 +1,9 @@
-ARMOR,HELMET,EYES,MOUTH,ACCESSORY,BACKGROUND
-,,,,,
-Gold,Gold,Level 1 Space Goggles,Toothpick,Angel,Black (Rare)
-Python,Python,Level 2 Space Goggles,Wheat,Devil,White (Rare)
-Cheetah,Cheetah,Level 3 Space Goggles,Diamond,Dev,Cosmic (Rare)
-Holy,Holy,Level 4 Space Goggles,Gold,Dev Do Something,Dark Navy
-Heathen,Heathen,Level 5 Space Goggles,Bubblegum,Dave,Hunter Green
-Pimp,Pimp,Laser Beam,Street Light,Rat in a Suit,Martian Red
-Bearskin,Bearskin,Falling Out Eyes,Battle Scar,Nunchucks,Burnt Orange
-Lionskin,Lionskin,Gold Visor,Tattoo,Samurai Sword,
-Silver,Silver,Camo Visor,Big Mouth,Laser Blaster,
-Bronze,Bronze,Black Visor,No Talk,Sniper,
-Chrome,Chrome,Chrome Visor,Breathing Machine #206,Knives,
-Link,Link,Red Visor,Voice Changer,Grenades,
-Hawaiin,Hawaiin,Angry Eyes,Blood Drip,Machette,
-Camo Green,Camo Green,Pop-Out Eyes,Sona Drip,Roulette Wheel,
-Digi Camo,Digi Camo,Lazy Eye,Nuc'lar (Hazmat),Laptop,
-Navy,Navy,Lazy Eyes,Green Juice,Backpack,
-Black,Black,Dead,,Ring,
-Pink,Pink,Aye Eye (Pirate),,Big scissors ,
-Mars Red,Mars Red,Cross Eyed,,Useless Diploma,
-Neptune Blue,Neptune Blue,Black shades,,Diamond Hands,
-Solar (Orange),Solar (Orange),Chrome shades,,,
-Hunter Green,Hunter Green,Gold shades,,,
-Slime Green,Slime Green,Camo shades,,,
-Nuc'lar (Hazmat),Nuc'lar (Hazmat),Red shades,,,
-Coffee,Coffee,,,,
-Suit,Suit (Top Hat),,,,
-Skeleton,Skeleton,,,,
-Royalty,Royalty,,,,
-Brick,Brick,,,,
-Monk,Monk,,,,
-Wood,Wood,,,,
-Diamond,Diamond,,,,
+Armor,Helmet,Eyes,Mouth,Accessory,Background,Strength,Valor,Intelligence,Speed,Magic,,,,,,
+Diamond,Silver,Aye Eye (Pirate),No Talk,Nunchucks,Dark Navy,468,592,555,542,563,,117,148,138.75,135.5,140.75
+Hawaiian,Pink,Gold Visor,Battle Scar,Grenades,Martian Red,425,450,395,415,380,,106.25,112.5,98.75,103.75,95
+Wood,Suit,Level 1 Space Goggles,Nuc'lar (Hazmat),Laptop,Burnt Orange,355,365,430,360,380,,88.75,91.25,107.5,90,95
+Python,Python,Level 5 Space Goggles,Sona Drip,Rat in a Suit,Black (Rare),525,490,495,479,520,,131.25,122.5,123.75,119.75,130
+Camo Green,Mars Red,Level 3 Space Goggles,Breathing Machine #206,Dev Do Something,White (Rare),455,480,415,440,425,,113.75,120,103.75,110,106.25
+Digi Camo,Holy,Black Visor,Voice Changer,Laser Blaster,Cosmic (Rare),452,462,421,447,465,,113,115.5,105.25,111.75,116.25
+,,,,,,,,,,,,,,,,
+,,,,,4,,,,,,,,,,,

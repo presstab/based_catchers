@@ -3,15 +3,21 @@ import "./ierc5058.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 interface ICharacterData {
-    function data(uint256 _hash) external view returns (uint8 strength, uint8 valor, uint8 intelligence, uint8 speed, uint8 magic);
+    function data(uint256 _hash) external view returns (uint8, uint8, uint8, uint8, uint8, uint8);
 }
 
 struct Traits {
-    uint8 strength;
-    uint8 valor;
-    uint8 intelligence;
-    uint8 speed;
-    uint8 magic;
+    uint16 multiplier;
+    uint16 strength;
+    uint16 valor;
+    uint16 intelligence;
+    uint16 speed;
+    uint16 magic;
+}
+
+enum Location {
+    Home,
+    BattleArena
 }
 
 contract NftTracker is Ownable {
@@ -34,12 +40,15 @@ contract NftTracker is Ownable {
     struct Team {
         mapping(uint256 => NftInstance) members;
         uint256 length;
+        address owner;
+        Location location;
     }
 
     //team_id => Team
     mapping(uint256 => Team) public mapTeams; // team_id => Team
 
-    //todo list of team_id
+    // Teams that are ready to battle
+    uint256[] public battleArena;
 
     //track teams owned by a user address
     mapping(address => uint256[]) public mapUserTeams; // user address => teamId[]
@@ -87,6 +96,8 @@ contract NftTracker is Ownable {
         uint256 team_id = getHash(_team);
         Team storage team = mapTeams[team_id];
         team.length = len;
+        team.owner = msg.sender;
+        team.location = Location.Home;
 
         for (uint256 i = 0; i < len; i++){
             NftInstance calldata nft = _team[i];
@@ -128,14 +139,10 @@ contract NftTracker is Ownable {
         Team storage team = mapTeams[_id];
         uint256 len = team.length;
         require(len > 0, "team does not exist");
+        require(team.owner == msg.sender, "err: msg.sender does not own team");
 
         for (uint256 i = 0; i < len; i++){
             NftInstance memory nft = team.members[i];
-
-            if (i == 0){
-                //The owner must be the msg sender
-                require(IERC721(nft.addr).ownerOf(nft.id) == msg.sender, "err: msg.sender does not own nft");
-            }
 
             //Unlock nft
             IERC5058(nft.addr).unlock(nft.id);
@@ -165,14 +172,46 @@ contract NftTracker is Ownable {
         delete mapTeams[_id];
     }
 
+    function enterBattleArena(uint256 _idTeam) external {
+        Team storage team = mapTeams[_idTeam];
+        require(team.owner == msg.sender, "err: msg.sender not team owner");
+        require(team.location == Location.Home, "err: team location is not home");
+        battleArena.push(_idTeam);
+        team.location = Location.BattleArena;
+    }
+
+    function exitBattleArena(uint256 _idTeam) external {
+        Team storage team = mapTeams[_idTeam];
+        require(team.owner == msg.sender, "err: msg.sender not team owner");
+        require(team.location == Location.Home, "err: team location is not home");
+
+        //remove from battle arena
+        uint256 len = battleArena.length;
+        bool replaced = false;
+        for (uint256 i = 0; i < len; i++) {
+            if (battleArena[i] == _idTeam) {
+                //replace element with the last element and then remove last element
+                //todo - test with 1 team in battle arena and then with multiple teams and removing last team
+                battleArena[i] = battleArena[len-1];
+                battleArena.pop();
+                replaced = true;
+                break;
+            }
+        }
+        require(replaced, "err: failed to remove from battle arena");
+        team.location = Location.Home;
+    }
+
     function battle(uint256 _idAttacker, uint256 _idDefender) public view returns (uint256) {
         Team storage teamAttack = mapTeams[_idAttacker];
         Team storage teamDefend = mapTeams[_idDefender];
         require(teamAttack.length > 0, "err: team attack does not exist");
         require(teamDefend.length > 0, "err: team defend does not exist");
+        require(teamAttack.location == Location.BattleArena, "err: attack team is not in battle arena");
+        require(teamDefend.location == Location.BattleArena, "err: defend team is not in battle arena");
 
-        //Attacker must be the owner of the team //todo: better on gas to store owner address in the team struct?
-        require(IERC721(teamAttack.members[0].addr).ownerOf(teamAttack.members[0].id) == msg.sender, "err: msg.sender does not own nft");
+        //Attacker must be the owner of the team
+        require(teamAttack.owner == msg.sender, "err: msg.sender not team owner");
 
         //Add up traits of each team
         uint8 lenAttack = uint8(teamAttack.length);
@@ -180,12 +219,12 @@ contract NftTracker is Ownable {
         for (uint8 i = 0; i < lenAttack; i++) {
             NftInstance memory nft = teamAttack.members[i];
             Traits memory traits;
-            (traits.strength, traits.valor, traits.intelligence, traits.speed, traits.magic) = characterData.data(getHash(nft));
-            traitsAttack.strength += traits.strength;
-            traitsAttack.valor += traits.valor;
-            traitsAttack.intelligence += traits.intelligence;
-            traitsAttack.speed += traits.speed;
-            traitsAttack.magic += traits.magic;
+            (traits.multiplier, traits.strength, traits.valor, traits.intelligence, traits.speed, traits.magic) = characterData.data(getHash(nft));
+            traitsAttack.strength += (traits.strength*traits.multiplier);
+            traitsAttack.valor += (traits.valor*traits.multiplier);
+            traitsAttack.intelligence += (traits.intelligence*traits.multiplier);
+            traitsAttack.speed += (traits.speed*traits.multiplier);
+            traitsAttack.magic += (traits.magic*traits.multiplier);
         }
 
         uint8 lenDefend = uint8(teamDefend.length);
@@ -193,15 +232,15 @@ contract NftTracker is Ownable {
         for (uint8 i = 0; i < lenDefend; i++) {
             NftInstance memory nft = teamDefend.members[i];
             Traits memory traits;
-            (traits.strength, traits.valor, traits.intelligence, traits.speed, traits.magic) = characterData.data(getHash(nft));
-            traitsDefend.strength += traits.strength;
-            traitsDefend.valor += traits.valor;
-            traitsDefend.intelligence += traits.intelligence;
-            traitsDefend.speed += traits.speed;
-            traitsDefend.magic += traits.magic;
+            (traits.multiplier, traits.strength, traits.valor, traits.intelligence, traits.speed, traits.magic) = characterData.data(getHash(nft));
+            traitsDefend.strength += (traits.strength*traits.multiplier);
+            traitsDefend.valor += (traits.valor*traits.multiplier);
+            traitsDefend.intelligence += (traits.intelligence*traits.multiplier);
+            traitsDefend.speed += (traits.speed*traits.multiplier);
+            traitsDefend.magic += (traits.magic*traits.multiplier);
         }
 
-        //Modify traits of each team using random oracle
+        //todo: Modify traits of each team using random oracle
 
 
         //Use battle algorithm to determine winner

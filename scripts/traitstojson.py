@@ -7,7 +7,7 @@ reader = csv.reader(csvfile)
 i = 0
 j = 0
 for row in reader:
-	if i < 2:
+	if i < 1:
 		i = i + 1
 		continue
 
@@ -35,13 +35,33 @@ for row in reader:
 		{
 			"trait_type": "Background",
 			"value": row[5]
+		},
+		{
+			"trait_type": "Strength",
+			"value": int(row[6])
+		},
+		{
+			"trait_type": "Valor",
+			"value": int(row[7])
+		},
+		{
+			"trait_type": "Intelligence",
+			"value": int(row[8])
+		},
+		{
+			"trait_type": "Speed",
+			"value": int(row[9])
+		},
+		{
+			"trait_type": "Magic",
+			"value": int(row[10])
 		}
 	]
 
 	json_obj = {
-		"name": "Based Catcher #"+str(j),
-		"description": "Based Catcher #"+str(j),
-		"image":"",
+		"name": "Lone Squad #"+str(j),
+		"description": "Lone Squad #"+str(j),
+		"image":"http://192.169.6.71/ls_test/"+str(j)+".jpg",
 		"attributes": attributes
 	}
 	j = j + 1
