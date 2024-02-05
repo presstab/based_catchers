@@ -1,4 +1,5 @@
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 // SPDX-License-Identifier: CC0-1.0
 
@@ -121,7 +122,7 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
 
     //todo make sure others cant lock you to a contract that you approved
 
-    constructor(string memory name, string memory symbol) public ERC721(name, symbol) {
+    constructor(string memory name, string memory symbol) ERC721(name, symbol) {
     }
 
     mapping(uint256 => address) public mapLocks; // token id => locker address
@@ -137,17 +138,8 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
         super.transferFrom(from, to, tokenId);
     }
 
-    function safeTransferFrom(address from, address to, uint256 tokenId) public override (ERC721, IERC721) virtual {
-        require(!_isLocked(tokenId), "tokenId is locked");
-        super.safeTransferFrom(from, to, tokenId);
-    }
-
-    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory _data) public override (ERC721, IERC721) virtual {
-        require(!_isLocked(tokenId), "tokenId is locked");
-        super.safeTransferFrom(from, to, tokenId, _data);
-    }
-
-    function _burn(uint256 tokenId) internal override virtual {
+    //todo: No check performed for permissions!
+    function burn(uint256 tokenId) internal virtual {
         require(!_isLocked(tokenId), "tokenId is locked");
         super._burn(tokenId);
     }
@@ -245,7 +237,7 @@ contract ERC5058 is IERC5058, ERC721Enumerable {
     }
 
     function _getLockApproved(uint256 tokenId) internal view returns (address operator) {
-        require(_exists(tokenId), "tokenId does not exist");
+        require(_ownerOf(tokenId) != address(0), "tokenId does not exist");
         return mapLockApprovals[tokenId];
     }
 

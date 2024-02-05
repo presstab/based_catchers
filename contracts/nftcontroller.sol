@@ -14,14 +14,14 @@ struct Traits {
     uint8 magic;
 }
 
-contract NftTracker is Ownable {
+contract Game is Ownable {
     //The base nft
     IERC721 public baseNft;
 
     uint16 public maxTeamSize;
 
     //list of nft's that can be attached to the base nft
-    address[] public attachableNft;
+    address[] public playableNft;
 
     //Contract that tracks on chain metadata for each character
     ICharacterData public characterData; 
@@ -47,7 +47,7 @@ contract NftTracker is Ownable {
     //track what team an nft is on
     mapping(uint256 => uint256) public mapNftTeam; //nft hash (keccak(address,id)) => team_id
 
-    constructor (IERC721 _baseNft, uint16 _maxTeamSize) {
+    constructor (address initialOwner, IERC721 _baseNft, uint16 _maxTeamSize) Ownable(initialOwner){
         baseNft = _baseNft;
         maxTeamSize = _maxTeamSize;
     }
@@ -102,8 +102,11 @@ contract NftTracker is Ownable {
             //Check if this is an approved nft
             if (i > 0){
                 uint256 n = getSubNft(nft.addr);
-                require(n < attachableNft.length, "err: nft not valid for teams");
+                require(n < playableNft.length, "err: nft not valid for teams");
             }
+
+            //Ensure metadata is functional
+            //characterData.data(getHash(nft));
 
             //Lock each nft for an indefinite time
             IERC5058(nft.addr).lock(nft.id);
@@ -205,8 +208,8 @@ contract NftTracker is Ownable {
 
 
         //Use battle algorithm to determine winner
-        uint64 scoreAttack = traitsAttack.strength + traitsAttack.valor + traitsAttack.intelligence + traitsAttack.speed + traitsAttack.magic;
-        uint64 scoreDefend = traitsDefend.strength + traitsDefend.valor + traitsDefend.intelligence + traitsDefend.speed + traitsDefend.magic;
+        uint64 scoreAttack = uint64(traitsAttack.strength) + uint64(traitsAttack.valor) + uint64(traitsAttack.intelligence) + uint64(traitsAttack.speed) + uint64(traitsAttack.magic);
+        uint64 scoreDefend = uint64(traitsDefend.strength) + uint64(traitsDefend.valor) + uint64(traitsDefend.intelligence) + uint64(traitsDefend.speed) + uint64(traitsDefend.magic);
     
         if (scoreAttack > scoreDefend) {
             return _idAttacker;
@@ -219,8 +222,8 @@ contract NftTracker is Ownable {
     function getSubNft(address _subNft) internal view returns (uint256) {
         //Identify which subNft is being used
         uint256 n = ~uint256(0);
-        for (uint256 i = 0 ; i < attachableNft.length; i++) {
-            if (_subNft == attachableNft[i]) {
+        for (uint256 i = 0 ; i < playableNft.length; i++) {
+            if (_subNft == playableNft[i]) {
                 n = i;
                 break;
             }
@@ -228,13 +231,13 @@ contract NftTracker is Ownable {
         return n;
     }
 
-    //Add a new attachable nft
-    function addAttachableNft(IERC721 _subNft) public onlyOwner {
-        //Double check that the subnft is not already added
-        for (uint256 i = 0; i < attachableNft.length; i++) {
-            require(attachableNft[i] != address(_subNft), "subnft already exists!");
+    //Add a nft collection that is approved to be added to a team
+    function addPlayableNft(IERC721 _subNft) public onlyOwner {
+        //Double check that the nft is not already added
+        for (uint256 i = 0; i < playableNft.length; i++) {
+            require(playableNft[i] != address(_subNft), "subnft already exists!");
         }
-        attachableNft.push(address(_subNft));
+        playableNft.push(address(_subNft));
     }
 
     //Set the maximum team size
@@ -243,7 +246,7 @@ contract NftTracker is Ownable {
     }
 
     //Set the contract that tracks nft data
-    function setNftData(address _characterData) public onlyOwner {
+    function setCharacterData(address _characterData) public onlyOwner {
         characterData = ICharacterData(_characterData);
     }
 }
