@@ -21,7 +21,7 @@ contract locker is Ownable {
     // The block number when staking starts.
     uint256 public startBlock;
 
-    constructor(mintableIERC20 _coin, address _dev, uint256 _coinsPerBlock, uint256 _startBlock) public {
+    constructor(address initialOwner, mintableIERC20 _coin, address _dev, uint256 _coinsPerBlock, uint256 _startBlock) Ownable(initialOwner) {
         coin = _coin;
         devaddr = _dev;
         coinsPerBlock = _coinsPerBlock;
